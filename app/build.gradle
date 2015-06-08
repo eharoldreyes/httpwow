@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.eharoldreyes.httpwow"
+        minSdkVersion 9
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.1.1'
+}
+
+ext {
+    //http://inthecheesefactory.com/blog/how-to-upload-library-to-jcenter-maven-central-as-dependency/en
+    bintrayRepo = 'maven'
+    bintrayName = 'httpwow'
+
+    publishedGroupId = 'com.eharoldreyes.httpwow'
+    libraryName = 'httpwow'
+    artifact = 'httpwow'
+
+    libraryDescription = 'A helper for HttpClient and HttpURLConnecton for Android'
+
+    siteUrl = 'https://github.com/eharoldreyes/httpwow'
+    gitUrl = 'https://github.com/eharoldreyes/httpwow.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'eharoldreyes'
+    developerName = 'Edgar Harold Reyes'
+    developerEmail = 'eharoldreyes@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
